@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>清除矩形</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="canvas-container">
+      <canvas id="canvas" height="200" width="200"></canvas>
+    </div>
+    <script>
+      window.onload = function() {
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "Pink";
+        ctx.fillRect(30, 50, 120, 120);
+        ctx.clearRect(60, 60, 80, 80);
+      };
+    </script>
+  </body>
+</html>

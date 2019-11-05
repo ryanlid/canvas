@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>绘制渐变调色板</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="canvas-container">
+      <canvas id="canvas" height="200" width="200"></canvas>
+    </div>
+    <script>
+      window.onload = function() {
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        let r = 255;
+        let g = 0;
+        let b = 0;
+        for (let i = 0; i < 250; i++) {
+          if (i < 25) {
+            g += 10;
+          } else if (i > 25 && i < 50) {
+            r -= 10;
+          } else if (i > 50 && i < 75) {
+            g -= 10;
+            b += 10;
+          } else if (i >= 75 && i < 100) {
+            r += 10;
+          } else {
+            b -= 10;
+          }
+          ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+          ctx.fillRect(3 * i, 0, 3, canvas.height);
+        }
+
+        ctx.stroke();
+      };
+    </script>
+  </body>
+</html>

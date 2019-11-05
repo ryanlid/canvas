@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>通过直线绘制矩形</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="canvas-container">
+      <canvas id="canvas" height="200" width="200"></canvas>
+    </div>
+    <script>
+      window.onload = function() {
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.moveTo(50, 50);
+        ctx.lineTo(150, 50);
+        ctx.lineTo(150, 150);
+        ctx.lineTo(50, 150);
+        ctx.lineTo(50, 50);
+        ctx.stroke();
+      };
+    </script>
+  </body>
+</html>
